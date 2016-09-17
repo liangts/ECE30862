@@ -1,8 +1,11 @@
 public class B {
 
-   public B( ) { };
+   public B() {
+   }
 
-   void foo(short s, D d,  double df) {
+   ;
+
+   void foo(short s, D d, double df) {
       System.out.println("B:foo(short, B, double)");
    }
 
@@ -30,7 +33,7 @@ public class B {
       System.out.println("B:foo(short, double)");
    }
 
-   public void caller( ) {
+   public void caller() {
 
       char c = 0;
       short s = 1;
@@ -38,11 +41,12 @@ public class B {
       float f = 0.0f;
       double df = 1.0;
 
-      B b = new B( );
-      D d = new D( );
+      B b = new B();
+      D d = new D();
 
-      foo(d, f);
-      foo(c, d, df);
-      foo(s); 
-      foo(i); 
+      //foo(d, f);
+      //foo(c, d, df);
+      foo(s);     //print B:foo(short)
+      foo(i);     //print B:foo(double)
+   }
 }

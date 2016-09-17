@@ -31,7 +31,7 @@ class Main {
       System.out.println("c12.c.floatValue( ): " + ((C1) c01).c.floatValue( ));
       System.out.println("c12.x: " + c01.x);
       System.out.println("c12.y: " + c01.y);
-      System.out.println("c12.z: " + c01.z);
+    //  System.out.println("c12.z: " + c01.z);
 
       System.out.println("c02.getA( ): " + c02.getA( ));
       System.out.println("c02.getB( ): " + c02.getB( ));

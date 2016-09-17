@@ -4,8 +4,8 @@ public class C0 {
 
    public Integer a;
    public Integer b;
-   private int x;
-   private int y;
+   public int x;
+   public int y;
 
    public C0( ) {
       this.x = 0;
@@ -35,7 +35,7 @@ public class C0 {
       return -x;
    }
 
-   private int getY( ) {
+   public int getY( ) {
       return -y;
    }
 }

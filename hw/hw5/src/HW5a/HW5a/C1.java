@@ -2,9 +2,9 @@ import java.io.*;
 
 public class C1 extends C0 {
 
-   private int x;
+   public int x;
    public int y;
-   private float z;
+   public float z;
    public Float c;
 
    public C1( ) {
@@ -31,7 +31,7 @@ public class C1 extends C0 {
    }
 
 
-   private int getY( ) {
+   public int getY( ) {
       return -super.getY( ) + 1;
    }
 }
