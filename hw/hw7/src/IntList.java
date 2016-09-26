@@ -11,7 +11,7 @@ public class IntList implements MyList {
     }
 
     public IntList(int data){
-        this.data = data;
+        this.data = null;
     }
 
     public int getData(){
