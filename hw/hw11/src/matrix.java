@@ -1,8 +1,10 @@
 public class matrix {
-    public int[][] matrix(int a){
-        int[][] array = new int[a][a];
+    public int[][] array;
 
-        return array;
+    public matrix(int a){
+        this.array = new int[a][a];
+
+        return this.array;
     }
 
     public int[] _get_matrix_size(int[][] arr_2d){
