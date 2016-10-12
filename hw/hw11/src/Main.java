@@ -1,7 +1,7 @@
 import java.util.Random;
 
 public class Main {
-    public int[] _get_matrix_size(int[][] arr_2d){
+    public static int[] _get_matrix_size(int[][] arr_2d){
         int[] return_array_size = new int[2];
         return_array_size[0] = arr_2d.length;
         return_array_size[1] = arr_2d[0].length;
@@ -14,7 +14,7 @@ public class Main {
         if (N % 2 != 0){
             throw new IllegalArgumentException("N % 2 should == 0!");
         }
-
+        int[][] A = new int[N][N];
         int[][] B = new int[N][N];
         int[][] C = new int[N][N];
 
@@ -27,13 +27,17 @@ public class Main {
             }
         }
 
-        System.out.println("Original matrix B:");
+        //System.out.println("Original matrix B:");
         //_print_matrix(B);
-        System.out.println("original matrix C:");
+        //System.out.println("original matrix C:");
         //_print_matrix(C);
+
         // Call thread calculation
-        int[][] A = _calc_array_A(B, C, 4);
-        System.out.println("original matrix A:");
+        A = _calc_array_A(B, C, 4);
+        A = _calc_array_A(B, C, 2);
+        A = _calc_array_A(B, C, 1);
+        System.out.println("Size of matrix A is: "+_get_matrix_size(A)[0]);
+        //System.out.println("original matrix A:");
         //_print_matrix(A);
 
     }
@@ -49,7 +53,7 @@ public class Main {
 
     }
 
-    public static Thread _thread_calc(int[][] A, int[][] B, int[][] C, int x1, int x2, int y1, int y2){
+    public static Thread _thread_calc(final int[][] A, final int[][] B, final int[][] C, final int x1, final int x2, final int y1,final int y2){
         class _thread implements Runnable{
             public void run(){
                 for (int i = x1; i < x2; i++){
@@ -113,8 +117,21 @@ public class Main {
         return A;
     }
 
+    /**
+     * Use the fill() function will automatically show the time used
+     * in thread number of 4 , 2 , 1
+     * @param args
+     */
     public static void main(String args[]){
+        System.out.println("My test time elapsed:");
+        System.out.println("java Main");
+        System.out.println("65, 71, 141ms for thread number 4, 2, 1");
+        System.out.println("java -Djava.compiler=NONE Main");
+        System.out.println("1324, 2534, 4856ms for thread number 4, 2, 1");
+        System.out.println("======Now Begin this program================");
+
         fill(10000);
+
     }
 
 
