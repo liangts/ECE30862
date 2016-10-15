@@ -1,0 +1,4 @@
+Q1. I is an interface, cannot contain constructors and cannot be extended by a class
+Q2. i = 5 is not executable due to the interface
+Q3. instance variable, it is created within the method.
+Q4. it's not necessary to define all functions declared in the interface.

@@ -1,0 +1,297 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EC2586DB1DB151F800F0835C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC2586CC1DB151F800F0835C /* main.cpp */; };
+		EC2586DC1DB151F800F0835C /* dPublic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC2586CD1DB151F800F0835C /* dPublic.cpp */; };
+		EC2586DD1DB151F800F0835C /* dProt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC2586CE1DB151F800F0835C /* dProt.cpp */; };
+		EC2586DE1DB151F800F0835C /* dPriv.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC2586CF1DB151F800F0835C /* dPriv.cpp */; };
+		EC2586DF1DB151F800F0835C /* PublicDerived.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC2586D01DB151F800F0835C /* PublicDerived.cpp */; };
+		EC2586E01DB151F800F0835C /* ProtDerived.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC2586D11DB151F800F0835C /* ProtDerived.cpp */; };
+		EC2586E11DB151F800F0835C /* PrivDerived.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC2586D21DB151F800F0835C /* PrivDerived.cpp */; };
+		EC2586E21DB151F800F0835C /* Base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC2586D31DB151F800F0835C /* Base.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EC2586BF1DB1519900F0835C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		EC2586C11DB1519A00F0835C /* hw13 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = hw13; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC2586CB1DB151F800F0835C /* HW13.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = HW13.pdf; sourceTree = "<group>"; };
+		EC2586CC1DB151F800F0835C /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		EC2586CD1DB151F800F0835C /* dPublic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dPublic.cpp; sourceTree = "<group>"; };
+		EC2586CE1DB151F800F0835C /* dProt.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dProt.cpp; sourceTree = "<group>"; };
+		EC2586CF1DB151F800F0835C /* dPriv.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dPriv.cpp; sourceTree = "<group>"; };
+		EC2586D01DB151F800F0835C /* PublicDerived.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PublicDerived.cpp; sourceTree = "<group>"; };
+		EC2586D11DB151F800F0835C /* ProtDerived.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ProtDerived.cpp; sourceTree = "<group>"; };
+		EC2586D21DB151F800F0835C /* PrivDerived.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PrivDerived.cpp; sourceTree = "<group>"; };
+		EC2586D31DB151F800F0835C /* Base.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Base.cpp; sourceTree = "<group>"; };
+		EC2586D41DB151F800F0835C /* Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base.h; sourceTree = "<group>"; };
+		EC2586D51DB151F800F0835C /* dPriv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dPriv.h; sourceTree = "<group>"; };
+		EC2586D61DB151F800F0835C /* dProt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dProt.h; sourceTree = "<group>"; };
+		EC2586D71DB151F800F0835C /* dPublic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dPublic.h; sourceTree = "<group>"; };
+		EC2586D81DB151F800F0835C /* PrivDerived.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivDerived.h; sourceTree = "<group>"; };
+		EC2586D91DB151F800F0835C /* ProtDerived.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProtDerived.h; sourceTree = "<group>"; };
+		EC2586DA1DB151F800F0835C /* PublicDerived.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicDerived.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EC2586BE1DB1519900F0835C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EC2586B81DB1519900F0835C = {
+			isa = PBXGroup;
+			children = (
+				EC2586C31DB1519A00F0835C /* hw13 */,
+				EC2586C21DB1519A00F0835C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EC2586C21DB1519A00F0835C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EC2586C11DB1519A00F0835C /* hw13 */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EC2586C31DB1519A00F0835C /* hw13 */ = {
+			isa = PBXGroup;
+			children = (
+				EC2586CB1DB151F800F0835C /* HW13.pdf */,
+				EC2586CC1DB151F800F0835C /* main.cpp */,
+				EC2586CD1DB151F800F0835C /* dPublic.cpp */,
+				EC2586CE1DB151F800F0835C /* dProt.cpp */,
+				EC2586CF1DB151F800F0835C /* dPriv.cpp */,
+				EC2586D01DB151F800F0835C /* PublicDerived.cpp */,
+				EC2586D11DB151F800F0835C /* ProtDerived.cpp */,
+				EC2586D21DB151F800F0835C /* PrivDerived.cpp */,
+				EC2586D31DB151F800F0835C /* Base.cpp */,
+				EC2586D41DB151F800F0835C /* Base.h */,
+				EC2586D51DB151F800F0835C /* dPriv.h */,
+				EC2586D61DB151F800F0835C /* dProt.h */,
+				EC2586D71DB151F800F0835C /* dPublic.h */,
+				EC2586D81DB151F800F0835C /* PrivDerived.h */,
+				EC2586D91DB151F800F0835C /* ProtDerived.h */,
+				EC2586DA1DB151F800F0835C /* PublicDerived.h */,
+			);
+			path = hw13;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EC2586C01DB1519900F0835C /* hw13 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC2586C81DB1519A00F0835C /* Build configuration list for PBXNativeTarget "hw13" */;
+			buildPhases = (
+				EC2586BD1DB1519900F0835C /* Sources */,
+				EC2586BE1DB1519900F0835C /* Frameworks */,
+				EC2586BF1DB1519900F0835C /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = hw13;
+			productName = hw13;
+			productReference = EC2586C11DB1519A00F0835C /* hw13 */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EC2586B91DB1519900F0835C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = Tianshu;
+				TargetAttributes = {
+					EC2586C01DB1519900F0835C = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = EC2586BC1DB1519900F0835C /* Build configuration list for PBXProject "hw13" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = EC2586B81DB1519900F0835C;
+			productRefGroup = EC2586C21DB1519A00F0835C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EC2586C01DB1519900F0835C /* hw13 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EC2586BD1DB1519900F0835C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC2586E11DB151F800F0835C /* PrivDerived.cpp in Sources */,
+				EC2586DB1DB151F800F0835C /* main.cpp in Sources */,
+				EC2586DC1DB151F800F0835C /* dPublic.cpp in Sources */,
+				EC2586DF1DB151F800F0835C /* PublicDerived.cpp in Sources */,
+				EC2586E21DB151F800F0835C /* Base.cpp in Sources */,
+				EC2586DD1DB151F800F0835C /* dProt.cpp in Sources */,
+				EC2586E01DB151F800F0835C /* ProtDerived.cpp in Sources */,
+				EC2586DE1DB151F800F0835C /* dPriv.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		EC2586C61DB1519A00F0835C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		EC2586C71DB1519A00F0835C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		EC2586C91DB1519A00F0835C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EC2586CA1DB1519A00F0835C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EC2586BC1DB1519900F0835C /* Build configuration list for PBXProject "hw13" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC2586C61DB1519A00F0835C /* Debug */,
+				EC2586C71DB1519A00F0835C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC2586C81DB1519A00F0835C /* Build configuration list for PBXNativeTarget "hw13" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC2586C91DB1519A00F0835C /* Debug */,
+				EC2586CA1DB1519A00F0835C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EC2586B91DB1519900F0835C /* Project object */;
+}
