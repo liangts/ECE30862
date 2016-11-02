@@ -42,5 +42,7 @@ int main(int argc, const char * argv[]) {
     cout<<getStringStream(testPet->Canine::return_breed())<<endl;
     cout<<testPet->Mammal::getlegs()<<endl;
     
+    delete testPet;
+    
     return 0;
 }
