@@ -1,122 +1,91 @@
-//
-//  Set.cpp
-//  hw15
-//
-//  Created by liang on 2016/11/2.
-//  Copyright © 2016年 Tianshu. All rights reserved.
-//
+#include <limits>
+#include <iostream>
+#include <exception>
+#include <stdexcept>
+#include "Set.h"
 
-#include "Set.hpp"
-#include <stdio.h>
+std::ostream& operator<<(std::ostream&, Set);
 
-int Set::_search_duplicate_elements(Elements* ptr, int num_checked){
-    
-    int duplicated = 0;
-    
-    if (ptr->next != NULL){
-        duplicated = _search_duplicate_elements(ptr ->next, num_checked);
-    }
-    
-    if (num_checked == ptr->value)
-        duplicated = 1;
-    return duplicated;
-}
-
-Elements* Set::_return_element_pos(Elements* ptr, int num_checked){
-    if (num_checked == ptr->value)
-        return ptr;
-    
-    if (ptr->next != NULL){
-        _return_element_pos(ptr->next, num_checked);
-    }
-    
-    return NULL;
-    
-}
-
-Set::Set(int n){
-    Elements* new_Elements = new Elements(n);
-    Set* new_Set = new Set();
-    new_Set->head = new_Elements;
-}
-
-void Set::add_elements(Elements* head, int num){
-    if (_return_element_pos(head, num) == NULL){
-        Elements* new_elements = new Elements(num, head);
-        head->prev = new_elements;
-        head = new_elements;
+Set::Set(size_t set_max) : set_max(set_max){
+    this->set_memory = new bool[set_max + 1];
+    counter = 0L;
+    for (size_t i = 0; i <= set_max; i++) {
+        this->set_memory[i] = false;
     }
 }
+Set::Set(const Set& copy) : Set(copy.set_max) {
+    this->counter = copy.counter + 1;
 
-void Set::del_elements(Elements *head, int num){
-    Elements* tmp = _return_element_pos(head, num);
-    if (tmp != NULL){
-        tmp->prev->next = tmp->next;
-        tmp->next->prev = tmp->prev;
-        delete tmp;
-    }
+    memcpy(set_memory, copy.set_memory, sizeof(bool) * (copy.set_max + 1));
 }
 
-Set* Set::and_set(Elements *head_1, Elements *head_2){
-    Elements* ptr1 = head_1;
-    Elements* ptr2 = head_2;
-    Set* new_Set = NULL;
-    
-    while (ptr2 != NULL) {
-        if (_return_element_pos(ptr1, ptr2->value) != NULL){
-            if (new_Set == NULL)
-                new_Set = new Set(ptr2->value);
-            else
-                new_Set->add_elements(new_Set->head, ptr2->value);
-        }
-        ptr2 = ptr2->next;
-    }
-    
-    return new_Set;
+Set::~Set() {
+    delete this->set_memory;
 }
 
-Set* Set::complement_set(Elements *head){
-    Set* new_Set = NULL;
-    for (int i = 0 ; i < 64; i++) {
-        if (_return_element_pos(head, i) == NULL){
-            if (new_Set == NULL)
-                new_Set = new Set(i);
-            else
-                new_Set->add_elements(new_Set->head, i);
+Set& Set::operator+(const unsigned int operand) {
+    if ((size_t) operand > this->set_max) {
+        throw new std::runtime_error("exceed set maximum");
+    }
+    this->set_memory[(size_t) operand] = true;
+    return *this;
+}
+Set& Set::operator-(const unsigned int operand) {
+    if ((size_t) operand > this->set_max) {
+        throw new std::runtime_error("exceed set maximum");
+    }
+    this->set_memory[(size_t) operand] = false;
+    return *this;
+}
+Set Set::operator&(Set& operand) {
+    Set retSet = Set(this->set_max);
+    for (size_t i = 0; i <= this->set_max; i++) {
+        if (this->set_memory[i] && operand.set_memory[i]) {
+            retSet = retSet + i;
         }
     }
-    
-    return new_Set;
+    return retSet;
 }
-
-Set* Set::diff_set(Elements *head_1, Elements *head_2){
-    Elements* ptr1 = head_1;
-    Elements* ptr2 = head_2;
-    Set* new_Set = NULL;
-    
-    while (ptr2 != NULL) {
-        if (_return_element_pos(ptr1, ptr2->value) == NULL){
-            if (new_Set == NULL)
-                new_Set = new Set(ptr2->value);
-            else
-                new_Set->add_elements(new_Set->head, ptr2->value);
+Set Set::operator~() {
+    Set retSet = Set(this->set_max);
+    for (size_t i = 0; i <= this->set_max; i++) {
+        if (!this->set_memory[i]) {
+            retSet = retSet + i;
         }
-        ptr2 = ptr2->next;
     }
-    
-    return new_Set;
+    return retSet;
+}
+Set Set::operator/(Set& operand) {
+    Set retSet = Set(this->set_max);
+    for (size_t i = 0; i <= this->set_max; i++) {
+        if (this->set_memory[i] && !operand.set_memory[i]) {
+            retSet = retSet + i;
+        }
+    }
+    return retSet;
 }
 
-void Set::print_out_set(Set *set){
-    Elements* ptr = set -> head;
-    printf("The set is :");
-    while (ptr != NULL) {
-        printf("%d, ", ptr->value);
-        ptr = ptr->next;
-    }
-    printf("\n");
+Set& Set::operator=(const Set& copy) {
+    this->counter = copy.counter + 1;
+
+    delete this->set_memory;
+    this->set_memory = new bool[this->set_max + 1];
+    memcpy(set_memory, copy.set_memory, sizeof(bool) * (copy.set_max + 1));
+    return *this;
 }
 
-
-
-
+std::ostream& operator<<(std::ostream& stream, Set set) {
+    for (size_t i = 0; i <= set.getSetMax(); i++) {
+        if (!set.contains((unsigned int) i)) continue;
+        stream << i;
+        bool flag = false;
+        for (size_t j = i + 1; j <= set.getSetMax(); j++) {
+            if (set.contains((unsigned int) j)) {
+                flag = true;
+                break;
+            }
+        }
+        if (flag) stream << ',' << ' ';
+    }
+    return stream;
+}
