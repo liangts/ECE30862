@@ -25,8 +25,7 @@ void Room::setupRoom(xml_node<> *room){
         if(string(tmp->name()) == "border"){
             _boundary * newborder = new _boundary();
             string bdname, direction;
-            for(xml_node<>* tmp2 = tmp -> first_node();
-                tmp2; tmp2 = tmp2 -> next_sibling()){
+            for(xml_node<>* tmp2 = tmp -> first_node();tmp2; tmp2 = tmp2 -> next_sibling()){
                 if(string(tmp2->name()) == "name"){
                     bdname = tmp2 -> value();
                 }
