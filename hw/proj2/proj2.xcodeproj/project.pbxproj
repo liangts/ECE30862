@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC0980491DF3C29A00742FBC /* Game_system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC0980471DF3C29A00742FBC /* Game_system.cpp */; };
 		EC22A0C61DE7DDB40080033B /* Room.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC22A0C41DE7DDB40080033B /* Room.cpp */; };
 		EC22A0C91DE7DE9E0080033B /* Container.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC22A0C71DE7DE9E0080033B /* Container.cpp */; };
 		EC22A0CC1DE7DEA90080033B /* Item.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC22A0CA1DE7DEA90080033B /* Item.cpp */; };
@@ -29,7 +30,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		EC22A0BC1DE7CC740080033B /* header.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; path = header.h; sourceTree = "<group>"; };
+		EC0980471DF3C29A00742FBC /* Game_system.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game_system.cpp; sourceTree = "<group>"; };
+		EC0980481DF3C29A00742FBC /* Game_system.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Game_system.hpp; sourceTree = "<group>"; };
 		EC22A0BF1DE7CCFA0080033B /* rapidxml-1.13 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "rapidxml-1.13"; sourceTree = "<group>"; };
 		EC22A0C41DE7DDB40080033B /* Room.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Room.cpp; sourceTree = "<group>"; };
 		EC22A0C51DE7DDB40080033B /* Room.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Room.hpp; sourceTree = "<group>"; };
@@ -79,7 +81,6 @@
 			children = (
 				EC22A0BF1DE7CCFA0080033B /* rapidxml-1.13 */,
 				EC5AB6871DE68AEA00824DBB /* main.cpp */,
-				EC22A0BC1DE7CC740080033B /* header.h */,
 				EC22A0C41DE7DDB40080033B /* Room.cpp */,
 				EC22A0C51DE7DDB40080033B /* Room.hpp */,
 				EC22A0C71DE7DE9E0080033B /* Container.cpp */,
@@ -92,6 +93,8 @@
 				EC22A0D11DE7DEF70080033B /* Trigger.hpp */,
 				ECBEDE191DEBAD2B0074F035 /* Attack.cpp */,
 				ECBEDE1A1DEBAD2B0074F035 /* Attack.hpp */,
+				EC0980471DF3C29A00742FBC /* Game_system.cpp */,
+				EC0980481DF3C29A00742FBC /* Game_system.hpp */,
 			);
 			path = proj2;
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 				EC22A0C61DE7DDB40080033B /* Room.cpp in Sources */,
 				EC22A0D21DE7DEF70080033B /* Trigger.cpp in Sources */,
 				EC5AB6881DE68AEA00824DBB /* main.cpp in Sources */,
+				EC0980491DF3C29A00742FBC /* Game_system.cpp in Sources */,
 				ECBEDE1B1DEBAD2B0074F035 /* Attack.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
