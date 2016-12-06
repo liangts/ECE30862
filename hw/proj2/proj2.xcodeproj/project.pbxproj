@@ -13,7 +13,6 @@
 		EC22A0CC1DE7DEA90080033B /* Item.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC22A0CA1DE7DEA90080033B /* Item.cpp */; };
 		EC22A0CF1DE7DEB70080033B /* Creature.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC22A0CD1DE7DEB70080033B /* Creature.cpp */; };
 		EC22A0D21DE7DEF70080033B /* Trigger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC22A0D01DE7DEF70080033B /* Trigger.cpp */; };
-		EC5AB6881DE68AEA00824DBB /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC5AB6871DE68AEA00824DBB /* main.cpp */; };
 		ECBEDE1B1DEBAD2B0074F035 /* Attack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECBEDE191DEBAD2B0074F035 /* Attack.cpp */; };
 /* End PBXBuildFile section */
 
@@ -43,8 +42,8 @@
 		EC22A0CE1DE7DEB70080033B /* Creature.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Creature.hpp; sourceTree = "<group>"; };
 		EC22A0D01DE7DEF70080033B /* Trigger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Trigger.cpp; sourceTree = "<group>"; };
 		EC22A0D11DE7DEF70080033B /* Trigger.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Trigger.hpp; sourceTree = "<group>"; };
+		EC4E1FB91DF6522400D9264D /* sample.txt.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = sample.txt.xml; sourceTree = "<group>"; };
 		EC5AB6841DE68AEA00824DBB /* proj2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = proj2; sourceTree = BUILT_PRODUCTS_DIR; };
-		EC5AB6871DE68AEA00824DBB /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		ECBEDE191DEBAD2B0074F035 /* Attack.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Attack.cpp; sourceTree = "<group>"; };
 		ECBEDE1A1DEBAD2B0074F035 /* Attack.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Attack.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,7 +79,6 @@
 			isa = PBXGroup;
 			children = (
 				EC22A0BF1DE7CCFA0080033B /* rapidxml-1.13 */,
-				EC5AB6871DE68AEA00824DBB /* main.cpp */,
 				EC22A0C41DE7DDB40080033B /* Room.cpp */,
 				EC22A0C51DE7DDB40080033B /* Room.hpp */,
 				EC22A0C71DE7DE9E0080033B /* Container.cpp */,
@@ -95,6 +93,7 @@
 				ECBEDE1A1DEBAD2B0074F035 /* Attack.hpp */,
 				EC0980471DF3C29A00742FBC /* Game_system.cpp */,
 				EC0980481DF3C29A00742FBC /* Game_system.hpp */,
+				EC4E1FB91DF6522400D9264D /* sample.txt.xml */,
 			);
 			path = proj2;
 			sourceTree = "<group>";
@@ -161,7 +160,6 @@
 				EC22A0C91DE7DE9E0080033B /* Container.cpp in Sources */,
 				EC22A0C61DE7DDB40080033B /* Room.cpp in Sources */,
 				EC22A0D21DE7DEF70080033B /* Trigger.cpp in Sources */,
-				EC5AB6881DE68AEA00824DBB /* main.cpp in Sources */,
 				EC0980491DF3C29A00742FBC /* Game_system.cpp in Sources */,
 				ECBEDE1B1DEBAD2B0074F035 /* Attack.cpp in Sources */,
 			);
@@ -260,6 +258,8 @@
 		EC5AB68C1DE68AEA00824DBB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++98";
+				GCC_NO_COMMON_BLOCKS = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -267,6 +267,8 @@
 		EC5AB68D1DE68AEA00824DBB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++98";
+				GCC_NO_COMMON_BLOCKS = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

@@ -36,7 +36,6 @@ bool game_over_indication = false;
 
 Room* curr_room_ptr = NULL;
 
-
 namespace objects {
     void _add(string condition);
     void _delete(string obj_name);
@@ -51,11 +50,11 @@ namespace game {
     void input_response(string);
     
     void changeRoom(string input);
-    void showInventoru();
+    void showInventory();
     void take(string input);
     void drop(string input);
     void read(string input);
-    void put(string input);
+    void put(string src, string dest);
     void turnon(string input);
     void open(string input);
     void exit();
@@ -63,12 +62,13 @@ namespace game {
 }
 
 namespace trigger {
-    void owner(Trigger* t);
+    bool owner(Trigger* t);
     bool status(Trigger* t);
     bool check_wo_cmd();
     bool check_w_cmd(string input);
     
 }
+
 
 #endif /* Game_system_hpp */
 
