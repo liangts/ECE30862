@@ -16,52 +16,52 @@ void Trigger::construct_trigger(xml_node<>* node){
     type = "single";
     iterator = 0;
     
-    for(xml_node<>* son = node ->first_node();son; son = son->next_sibling()){
-        if (string(son->name()) == "type")
-            type = son -> value();
+    for(xml_node<>* tmp = node ->first_node();tmp; tmp = tmp->next_sibling()){
+        if (string(tmp->name()) == "type")
+            type = tmp -> value();
         
-        if (string(son->name()) == "print"){
+        if (string(tmp->name()) == "print"){
             has_print = true;
-            print = son -> value();
+            print = tmp -> value();
         }
         
         
-        if (string(son->name()) == "command"){
+        if (string(tmp->name()) == "command"){
             has_command = true;
-            command = son->name();
+            command = tmp->name();
         }
         
-        if (string(son->name()) == "action"){
+        if (string(tmp->name()) == "action"){
             has_action = true;
-            string temp = son -> name();
+            string temp = tmp -> name();
             action.push_back(temp);
         }
         
-        if (string(son->name()) == "condition"){
-            condition = _return_condition(son);
+        if (string(tmp->name()) == "condition"){
+            condition = _return_condition(tmp);
             if (condition == 2)
-                setupStatus(node);
+                setupStatus(tmp);
             else if (condition == 3)
-                setupOwner(node);
+                setupOwner(tmp);
         }
     }
 }
 
 int Trigger::_return_condition(xml_node<> *node){
     int n = 0;
-    for (xml_node<>* son = node ->first_node();son; son = son->next_sibling()){
+    for (xml_node<>* tmp = node ->first_node();tmp; tmp = tmp->next_sibling()){
         ++n;
     }
     return n;
 }
 
 void Trigger::setupStatus(xml_node<> *node){
-    for (xml_node<>* son = node ->first_node();son; son = son->next_sibling()){
-        if(string(son->name()) == "object"){
-            status.object = son -> value();
+    for (xml_node<>* tmp = node ->first_node();tmp; tmp = tmp->next_sibling()){
+        if(string(tmp->name()) == "object"){
+            status.object = tmp -> value();
         }
-        if(string(son->name()) == "status"){
-            status.status = son -> value();
+        if(string(tmp->name()) == "status"){
+            status.status = tmp -> value();
         }
     }
 
@@ -69,15 +69,16 @@ void Trigger::setupStatus(xml_node<> *node){
 
 
 void Trigger::setupOwner(xml_node<> *node){
-    for(xml_node<>* son = node -> first_node();son; son = son -> next_sibling()){
-        if(string(son->name()) == "object"){
-            owner.object = son -> value();
+    for(xml_node<>* tmp = node -> first_node();tmp; tmp = tmp -> next_sibling()){
+        if(string(tmp->name()) == "object"){
+            owner.object = tmp -> value();
         }
-        if(string(son->name()) == "has"){
-            owner.has = son -> value();
+        if(string(tmp->name()) == "has"){
+            owner.has = tmp -> value();
         }
-        if(string(son->name()) == "owner"){
-            owner.owner = son -> value();
+        if(string(tmp->name()) == "owner"){
+            owner.owner = tmp -> value();
+            cout<<"testpoint1: " << tmp->value() <<endl;
         }
     }
 }

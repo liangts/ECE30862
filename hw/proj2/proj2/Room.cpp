@@ -10,19 +10,16 @@
 
 void Room::setupRoom(xml_node<> *room){
     for (xml_node<>* tmp = room->first_node(); tmp; tmp = tmp->next_sibling()){
-        if(string(tmp->name()) == "name"){
+        string s = string(tmp->name());
+        if(s == "name")
             name = tmp -> value();
-        }
-        if(string(tmp->name()) == "status"){
+        if(s == "status")
             status = tmp->value();
-        }
-        if(string(tmp->name()) == "type"){
+        if(s == "type")
             type = tmp -> value();
-        }
-        if(string(tmp->name()) == "description"){
+        if(s == "description")
             description = tmp -> value();
-        }
-        if(string(tmp->name()) == "border"){
+        if(s == "border"){
             _boundary * newborder = new _boundary();
             string bdname, direction;
             for(xml_node<>* tmp2 = tmp -> first_node();tmp2; tmp2 = tmp2 -> next_sibling()){
@@ -41,22 +38,14 @@ void Room::setupRoom(xml_node<> *room){
             newborder -> name = bdname;
             border.push_back(newborder);
         }
-        string tmp_buffer;
-        if(string(tmp->name()) == "container"){
-            tmp_buffer = tmp -> value();
-            container.push_back(tmp_buffer);
-        }
-        if(string(tmp->name()) == "item"){
-            tmp_buffer = tmp -> value();
-            item.push_back(tmp_buffer);
-        }
-        if(string(tmp->name()) == "creature"){
-            tmp_buffer = tmp -> value();
-            creature.push_back(tmp_buffer);
-        }
-        if(string(tmp->name()) == "trigger"){
-            Trigger * t = new Trigger(tmp);
-            trigger.push_back(t);
-        }
+
+        if(s == "container")
+            container.push_back(tmp ->value());
+        if (s == "item")
+            item.push_back(tmp->value());
+        if (s == "creature")
+            creature.push_back(tmp->value());
+        if (s == "trigger")
+            trigger.push_back(new Trigger(tmp));
     }
 }

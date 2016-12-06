@@ -63,7 +63,7 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "sample.txt.xml"
+            argument = "containersample.xml"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

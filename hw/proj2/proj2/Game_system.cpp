@@ -7,12 +7,13 @@
 //
 
 #include "Game_system.hpp"
+#include <stdio.h>
 
 int _load_xml_elements(xml_node<>* node ,vector<xml_node<>*> rv_ptr, vector<xml_node<>*> cv_ptr, vector<xml_node<>*> crv_ptr, vector<xml_node<>*> iv_ptr){
     int success = 0;
     for (xml_node<>* tmp = node->first_node(); tmp; tmp = tmp ->next_sibling()){
         string s = string(tmp->name());
-        
+        cout << "Load: " << s <<endl;
         if (s == "room")
             rv_ptr.push_back(tmp);
         if (s == "container")
@@ -46,13 +47,27 @@ int main(int argc, const char * argv[]) {
     vector<xml_node<>*> creature_node_ptr;
     vector<xml_node<>*> item_node_ptr;
     
-    int contd = _load_xml_elements(node, room_node_ptr, container_node_ptr, creature_node_ptr, item_node_ptr);
-    
-    if (contd != 1)
-        return 2;
-    
+    for(xml_node<>*tmp = node -> first_node(); tmp; tmp = tmp -> next_sibling()){
+        if(string(tmp->name()) == string("room")){
+            room_node_ptr.push_back(tmp);
+        }
+        if(string(tmp->name()) == string("container")){
+            container_node_ptr.push_back(tmp);
+        }
+        if(string(tmp->name()) == string("item")){
+            item_node_ptr.push_back(tmp);
+        }
+        if(string(tmp->name()) == string("creature")){
+            creature_node_ptr.push_back(tmp);
+        }
+    }
+
+//    cout<<room_node_ptr.size()<<endl;
+
+    Room* room;
     for (int ind = 0; ind < room_node_ptr.size(); ind++) {
-        room_ptr_vector.push_back(new Room(room_node_ptr[ind]));
+        room =new Room(room_node_ptr[ind]);
+        room_ptr_vector.push_back(room);
     }
     
     for (int ind = 0; ind < container_node_ptr.size(); ind++) {
@@ -71,12 +86,12 @@ int main(int argc, const char * argv[]) {
     curr_room_ptr = room_ptr_vector[0];
     cout << curr_room_ptr->description <<endl;
     bool _override = false;
-    for(;;){
+    while(true){
         _override = trigger::check_wo_cmd();
         if(game_over_indication)
             return 0;
-        if(!_override)
-            return 0;
+        if(_override)
+            continue;
         getline(cin, input_cmd);
         
         if (string(input_cmd) == "q")
@@ -85,8 +100,8 @@ int main(int argc, const char * argv[]) {
         _override = trigger::check_w_cmd(input_cmd);
         if(game_over_indication)
             return 0;
-        if (!_override)
-            return 0;
+        if (_override)
+            continue;
         
         game::input_response(input_cmd);
         if(game_over_indication)
@@ -254,10 +269,11 @@ void game::checkAction(string action){
 void game::changeRoom(string input){
     unsigned long i = (curr_room_ptr ->border).size();
     int index = 0;
-    for(index = 0; index < i; index++){
+    for(; index < i; index++){
         if(curr_room_ptr -> border[index] -> dir == input){
+            string newroom = curr_room_ptr -> border[index] ->name;
             for(int index2 = 0; index2 < room_ptr_vector.size(); index2++){
-                if(room_ptr_vector[index2] -> name == curr_room_ptr -> border[index] -> name)
+                if(room_ptr_vector[index2] -> name == newroom)
                     curr_room_ptr = room_ptr_vector[index2];
             }
             break;
@@ -318,7 +334,7 @@ void game::drop(string input){
         if(inventory[i] == input){
             (curr_room_ptr->item).push_back(input);
             inventory.erase(inventory.begin() + i);
-            cout << input << "has been dropped." <<endl;
+            cout << input << " has been dropped." <<endl;
             return;
         }
     }
@@ -475,7 +491,7 @@ void game::attack(string creature, string weapon){
     }
     
     if (index_weapon == inventory.size()){
-        cout << "There is no weapon" << weapon << "in your inventory." << endl;
+        cout << "There is no weapon " << weapon << " in your inventory." << endl;
         return;
     }
     
@@ -529,7 +545,7 @@ void game::attack(string creature, string weapon){
         if(!found){
             for(index_weapon = 0; index_weapon < creature_ptr_vector.size(); index_weapon++){
                 if(creature_ptr_vector[index_weapon]->name == object){
-                    found = true;
+                    //found = true;
                     match = creature_ptr_vector[index_weapon]->status == status;
                     break;
                 }
@@ -705,6 +721,7 @@ bool trigger::owner(Trigger *t){
     string owner = t -> owner.owner;
     string has = t -> owner.has;
     string object = t -> owner.object;
+    cout << t ->owner.owner <<endl;
     //if owner + object == true && has == yes,
     // or owner + object == false && has == no, trigger activated
     //print and actions(plural), return true
