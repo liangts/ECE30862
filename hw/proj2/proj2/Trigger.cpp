@@ -17,27 +17,28 @@ void Trigger::construct_trigger(xml_node<>* node){
     iterator = 0;
     
     for(xml_node<>* tmp = node ->first_node();tmp; tmp = tmp->next_sibling()){
-        if (string(tmp->name()) == "type")
+        string s = string(tmp->name());
+        if (s == "type")
             type = tmp -> value();
         
-        if (string(tmp->name()) == "print"){
+        if (s == "print"){
             has_print = true;
             print = tmp -> value();
         }
         
         
-        if (string(tmp->name()) == "command"){
+        if (s == "command"){
             has_command = true;
-            command = tmp->name();
+            command = tmp->value();
         }
         
-        if (string(tmp->name()) == "action"){
+        if (s == "action"){
             has_action = true;
-            string temp = tmp -> name();
+            string temp = tmp -> value();
             action.push_back(temp);
         }
         
-        if (string(tmp->name()) == "condition"){
+        if (s == "condition"){
             condition = _return_condition(tmp);
             if (condition == 2)
                 setupStatus(tmp);
@@ -57,10 +58,11 @@ int Trigger::_return_condition(xml_node<> *node){
 
 void Trigger::setupStatus(xml_node<> *node){
     for (xml_node<>* tmp = node ->first_node();tmp; tmp = tmp->next_sibling()){
-        if(string(tmp->name()) == "object"){
+        string s = string(tmp->name());
+        if(s == "object"){
             status.object = tmp -> value();
         }
-        if(string(tmp->name()) == "status"){
+        if(s == "status"){
             status.status = tmp -> value();
         }
     }
@@ -70,15 +72,15 @@ void Trigger::setupStatus(xml_node<> *node){
 
 void Trigger::setupOwner(xml_node<> *node){
     for(xml_node<>* tmp = node -> first_node();tmp; tmp = tmp -> next_sibling()){
-        if(string(tmp->name()) == "object"){
+        string s = string(tmp->name());
+        if(s == "object"){
             owner.object = tmp -> value();
         }
-        if(string(tmp->name()) == "has"){
+        if(s == "has"){
             owner.has = tmp -> value();
         }
-        if(string(tmp->name()) == "owner"){
+        if(s == "owner"){
             owner.owner = tmp -> value();
-            cout<<"testpoint1: " << tmp->value() <<endl;
         }
     }
 }

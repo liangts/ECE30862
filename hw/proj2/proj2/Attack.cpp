@@ -18,7 +18,7 @@ void Attack::setupAttack(xml_node<> *node){
         
         if (s == "condition"){
             has_condition = true;
-            for (xml_node<>* tmp2 = node->first_node(); tmp2; tmp2 = tmp2->next_sibling()) {
+            for (xml_node<>* tmp2 = tmp->first_node(); tmp2; tmp2 = tmp2->next_sibling()) {
                 string s2 = string(tmp2->name());
                 
                 if (s2 == "object")

@@ -13,7 +13,7 @@ int _load_xml_elements(xml_node<>* node ,vector<xml_node<>*> rv_ptr, vector<xml_
     int success = 0;
     for (xml_node<>* tmp = node->first_node(); tmp; tmp = tmp ->next_sibling()){
         string s = string(tmp->name());
-        cout << "Load: " << s <<endl;
+//        cout << "Load: " << s <<endl;
         if (s == "room")
             rv_ptr.push_back(tmp);
         if (s == "container")
@@ -495,10 +495,11 @@ void game::attack(string creature, string weapon){
         return;
     }
     
-    cout << "You assault the " << creature << "with the " << weapon << endl;
+    cout << "You assault the " << creature << " with the " << weapon << endl;
     
     for(index_creature = 0; index_creature<creature_ptr_vector.size(); index_creature++){
-        if(creature_ptr_vector[index_creature]->name == creature){ break;}
+        if(creature_ptr_vector[index_creature]->name == creature)
+            break;
     }
     for(index_weapon = 0; index_weapon < creature_ptr_vector[index_creature]->vulnerability.size();index_weapon++){
         if(creature_ptr_vector[index_creature]->vulnerability[index_weapon] == weapon)
@@ -545,7 +546,7 @@ void game::attack(string creature, string weapon){
         if(!found){
             for(index_weapon = 0; index_weapon < creature_ptr_vector.size(); index_weapon++){
                 if(creature_ptr_vector[index_weapon]->name == object){
-                    //found = true;
+                    found = true;
                     match = creature_ptr_vector[index_weapon]->status == status;
                     break;
                 }
@@ -721,10 +722,8 @@ bool trigger::owner(Trigger *t){
     string owner = t -> owner.owner;
     string has = t -> owner.has;
     string object = t -> owner.object;
-    cout << t ->owner.owner <<endl;
-    //if owner + object == true && has == yes,
-    // or owner + object == false && has == no, trigger activated
-    //print and actions(plural), return true
+//    cout << t ->owner.owner <<endl;
+
     int i,j,k;
     if(owner == "inventory"){
         for(i = 0; i < inventory.size(); i++){
@@ -858,7 +857,7 @@ bool trigger::owner(Trigger *t){
     if(owner_type == "Container"){
         for(i = 0; i < container_ptr_vector.size(); i++){
             if(container_ptr_vector[i]->name == owner){
-                //Object can only be item
+
                 for(j = 0; j < container_ptr_vector[i] -> item.size(); j++){
                     if(container_ptr_vector[i]->item[j]== object){
                         if(has == "yes"){
@@ -895,12 +894,8 @@ bool trigger::owner(Trigger *t){
 
 
 bool trigger::status(Trigger *t){
-    //check object
     string object = t -> status.object;
-    //check object's status
     string status = t -> status.status;
-    //if it matches the status
-    //print and actions(plural), return true
     int i,j;
     string object_type = objects::type_detection(object);
     if(object_type == "Room"){
@@ -972,19 +967,15 @@ bool trigger::status(Trigger *t){
 
 
 bool trigger::check_wo_cmd(){
-    //check all triggers and pick the triggers with no command
-    //if it is permanent, continue, no worry
-    //else if it is single, check if it has not been executed before
-    //if it is 3-cond, go to ownerTrigger()
-    //else if it is 2-cond, go to statusTrigger()
+
     int i,j,k;
     bool room_t = false;
     bool item_t = false;
     bool container_t = false;
     bool creature_t = false;
     Trigger *t;
-    //current room trigger
-    if(curr_room_ptr -> trigger.size() != 0){ //has triggers~
+
+    if(curr_room_ptr -> trigger.size() != 0){
         for(j = 0; j < curr_room_ptr->trigger.size(); j++){
             t = curr_room_ptr->trigger[j];
             if(!t->has_command){
@@ -1110,7 +1101,7 @@ bool trigger::check_w_cmd(string input){
         }
     }
     
-    
+/*
     //current room's item trigger
     for(i = 0; i < curr_room_ptr -> item.size(); i++){
         string target = curr_room_ptr -> item[i];
@@ -1131,7 +1122,7 @@ bool trigger::check_w_cmd(string input){
                 }
             }
         }
-    }
+    }*/
     //current room's container trigger
     for(i = 0; i < curr_room_ptr -> container.size(); i++){
         string target = curr_room_ptr -> container[i];

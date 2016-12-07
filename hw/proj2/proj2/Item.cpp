@@ -25,16 +25,20 @@ void Item::setupItem(xml_node<> *node) {
         
         if (s == "turnon"){
             able_turnon = true;
-            
-            for (xml_node<>* tmp2 = node->first_node(); tmp2; tmp2 = tmp2->next_sibling()) {
+            string printmsg, actionmsg;
+            for (xml_node<>* tmp2 = tmp->first_node(); tmp2; tmp2 = tmp2->next_sibling()) {
                 string s2 = string(tmp2->name());
                 
                 if (s2 == "print")
-                    turnon.print_msg = tmp2->value();
+//                    turnon.print_msg = tmp2->value();
+                    printmsg = tmp2->value();
                 if (s2 == "action")
-                    turnon.action_msg = tmp2 -> value();
+//                    turnon.action_msg = tmp2 -> value();
+                    actionmsg = tmp2->value();
                 
             }
+            turnon.print_msg = printmsg;
+            turnon.action_msg = actionmsg;
         }
         
         if (s == "trigger")
